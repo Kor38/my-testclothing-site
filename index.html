@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Custom Clothing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to My Custom Clothing!</h1>
+  <p>Shop custom shirts, hoodies, and more.</p>
+  
+  <form name="order-form" method="POST" data-netlify="true">
+    <label>Name: <input type="text" name="name" required></label><br>
+    <label>Shirt Size: 
+      <select name="size">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+    </label><br>
+    <label>Custom Text: <input type="text" name="custom_text"></label><br>
+    <button type="submit">Submit Order</button>
+  </form>
+</body>
+</html>
