@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Custom Clothing</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Shop</title>
+  <style>
+    body {
+      background-color: #f0f0f0; /* light gray */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .shirt-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .shirt-gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .shirt-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Custom Clothing!</h1>
-  <p>Shop custom shirts, hoodies, and more.</p>
-  
- <form name="order-form" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="order-form">
-
-  <label>Name: <input type="text" name="name" required></label><br>
-
-  <label>Shirt Size: 
-    <select name="size" required>
-      <option value="" disabled selected>Select size</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-    </select>
-  </label><br>
-
-  <label>Custom Text: <input type="text" name="custom_text"></label><br>
-
-  <button type="submit">Submit Order</button>
-</form>
-
+  <h1>Custom Shop</h1>
+  <div class="shirt-gallery">
+    <a href="shirt1.html"><img src="images/shirt1.jpg" alt="Shirt 1"></a>
+    <a href="shirt2.html"><img src="images/shirt2.jpg" alt="Shirt 2"></a>
+    <a href="shirt3.html"><img src="images/shirt3.jpg" alt="Shirt 3"></a>
+  </div>
+</body>
+</html>
