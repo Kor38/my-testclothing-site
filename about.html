@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Korey - Custom Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f0f0;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-top: 80px;
+      color: #87cefa;
+      -webkit-text-stroke: 1px black;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 60px 0;
+      font-size: 1.2rem;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>About Korey</h1>
+
+  <div class="section">
+    <h2>From Doodles to Design</h2>
+    <p>My name is Korey, and I’ve been drawing ever since I could hold a pencil. What started as simple sketches on the backs of homework pages eventually turned into full-blown illustrations and personal designs. I didn’t always know I’d pursue clothing — but I always knew I wanted to create.</p>
+  </div>
+
+  <div class="section">
+    <h2>Why T-Shirts?</h2>
+    <p>Out of all the canvases in the world, there’s something raw and real about a blank t-shirt. It’s simple, personal, and mobile. Your shirt becomes your identity, and I wanted to be part of that story — to give people art they can wear. That’s what pushed me to start Custom Shop: my own space to bring designs to life.</p>
+  </div>
+
+  <div class="section">
+    <h2>Design with Purpose</h2>
+    <p>Every design I make is hand-drawn and digitally refined. I don’t use templates or stock images. My goal is to offer something personal, expressive, and a little bit bold. Whether it's minimalist line art or layered color explosions, I want the art to speak for itself — and for the wearer.</p>
+  </div>
+
+  <div class="section">
+    <h2>Just Getting Started</h2>
+    <p>Right now, it’s just me — drawing, printing, testing fabrics, and packing up orders. But that’s how I want it. I want every product to feel like it came from a real person, not a factory. I hope this shop grows with me as I keep learning and experimenting. This is only the beginning of what I want to build.</p>
+  </div>
+
+  <a class="back-link" href="index.html">← Back to Shop</a>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
