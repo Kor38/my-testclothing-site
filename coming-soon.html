@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon - Custom Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f0f0;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-top: 80px;
+      color: #87cefa;
+      -webkit-text-stroke: 1px black;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 0 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 12px;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 60px 0;
+      font-size: 1.2rem;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Coming Soon</h1>
+
+  <div class="section">
+    <h2>Stripes Are Back</h2>
+    <p>Clean. Bold. Timeless. Stripes are making a huge comeback in our next drop, with brand-new color blends and pattern sizes that add personality to any fit.</p>
+    <img src="images/logo1.jpg" alt="Stripes preview" />
+  </div>
+
+  <div class="section">
+    <h2>Polka Power</h2>
+    <p>We’re taking polka dots beyond the basics. Expect edgy combinations and off-balance placements that flip the traditional design on its head — in the best way.</p>
+    <img src="images/logo2.jpg" alt="Polka dots preview" />
+  </div>
+
+  <div class="section">
+    <h2>Smile On</h2>
+    <p>The smiley face is more than a symbol — it’s a statement. We’re bringing it into a whole new vibe with bold colors, hand-drawn versions, and layered graphics.</p>
+    <img src="images/logo3.jpg" alt="Smiley face preview" />
+  </div>
+
+  <a class="back-link" href="index.html">← Back to Shop</a>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
