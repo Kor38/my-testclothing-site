@@ -6,42 +6,51 @@
   <title>Custom Shop</title>
   <style>
     body {
-      background-color: #f0f0f0; /* light gray */
-      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
     h1 {
-      font-size: 3em;
-      margin-bottom: 40px;
-      color: #333;
+      font-size: 4rem;
+      color: #87cefa; /* light blue */
+      -webkit-text-stroke: 1px black; /* black outline */
+      margin-bottom: 60px;
+      user-select: none;
     }
-    .shirt-gallery {
+    .button-container {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
+      flex-wrap: wrap;
     }
-    .shirt-gallery img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
+    button {
+      background-color: white;
+      border: 2px solid #87cefa;
+      color: #87cefa;
+      font-size: 1.5rem;
+      padding: 15px 40px;
+      border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: all 0.3s ease;
+      min-width: 150px;
+      font-weight: 600;
     }
-    .shirt-gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    button:hover {
+      background-color: #87cefa;
+      color: black;
+      border-color: black;
     }
   </style>
 </head>
 <body>
   <h1>Custom Shop</h1>
-  <div class="shirt-gallery">
-    <a href="shirt1.html"><img src="images/shirt1.jpg" alt="Shirt 1"></a>
-    <a href="shirt2.html"><img src="images/shirt2.jpg" alt="Shirt 2"></a>
-    <a href="shirt3.html"><img src="images/shirt3.jpg" alt="Shirt 3"></a>
+
+  <div class="button-container">
+    <button onclick="location.href='products.html'">Products</button>
+    <button onclick="location.href='about.html'">About Us</button>
+    <button onclick="location.href='coming-soon.html'">Coming Soon</button>
   </div>
 </body>
 </html>
